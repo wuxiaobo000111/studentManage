@@ -17,10 +17,13 @@ public class HelloServer {
 
     public static void main(String[] args) {
         try {
+
             TNonblockingServerSocket socket = new TNonblockingServerSocket(7911);
             Hello.Processor processor = new Hello.Processor(new HelloImpl());
             TNonblockingServer.Args arg = new TNonblockingServer.Args(socket);
+            //使用什么样的协议
             arg.protocolFactory(new TBinaryProtocol.Factory());
+            //使用什么样的传输层技术
             arg.transportFactory(new TFramedTransport.Factory());
             arg.processorFactory(new TProcessorFactory(processor));
             TServer server = new TNonblockingServer(arg);
