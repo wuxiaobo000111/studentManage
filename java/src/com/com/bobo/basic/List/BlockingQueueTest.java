@@ -10,7 +10,7 @@ import java.util.concurrent.DelayQueue;
 public class BlockingQueueTest {
 
     public static void main(String[] args) {
-        BlockingQueue<MyDelayed> blockingQueue = new DelayQueue<MyDelayed>();
+        BlockingQueue<com.bobo.basic.List.MyDelayed> blockingQueue = new DelayQueue<com.bobo.basic.List.MyDelayed>();
         Producer p = new Producer(blockingQueue);
         Consumer c1 = new Consumer(blockingQueue);
         Consumer c2 = new Consumer(blockingQueue);

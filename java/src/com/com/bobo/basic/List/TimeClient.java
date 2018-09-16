@@ -18,7 +18,7 @@ public class TimeClient {
                 // 采用默认值
             }
         }
-        new Thread(new TimeClientHandle("127.0.0.1", port), "TimeClient-001")
+        new Thread(new com.bobo.basic.List.TimeClientHandle("127.0.0.1", port), "TimeClient-001")
                 .start();
     }
 }
